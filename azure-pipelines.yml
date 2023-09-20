@@ -11,4 +11,4 @@ pool:
 steps:
 - task: Xiao Build and Release Tools@0.0.1
   inputs:
-    samplestring: 'xiaofan'
+    samplestring: 'xiaofan_'
