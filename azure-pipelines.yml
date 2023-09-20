@@ -7,15 +7,6 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
+  name: Default    # your job runs on an agent in this pool
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+- script: echo hello world
