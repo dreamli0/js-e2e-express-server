@@ -9,4 +9,6 @@ trigger:
 pool:
   name: Default    # your job runs on an agent in this pool
 steps:
-- script: echo hello world
+- task: Xiao Build and Release Tools@0.0.1
+  inputs:
+    samplestring: 'xiaofan'
