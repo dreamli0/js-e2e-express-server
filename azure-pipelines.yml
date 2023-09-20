@@ -12,6 +12,6 @@ jobs:
     name: Default
   steps:
   - bash: echo "Hello world"
-  - task: Xiao Build and Release Tools
+  - task: Xiao Build and Release Tools@0.0.1
     inputs:
       samplestring: 'xiaofan_'
