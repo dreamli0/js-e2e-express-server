@@ -8,7 +8,7 @@ description: "This project is used instead of the previous express-generator."
 products:
 - azure
 - vs-code
----
+----
 
 # JavaScript end-to-end client file upload to Azure Storage Blobs
 
