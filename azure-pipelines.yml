@@ -8,11 +8,10 @@ trigger:
 
 jobs:
 - job: myJob
-  timeoutInMinutes: 10
   pool:
     name: Default
   steps:
   - bash: echo "Hello world"
-  - task: Xiao Build and Release Tools@0.0.1
+  - task: Xiao Build and Release Tools
     inputs:
       samplestring: 'xiaofan_'
