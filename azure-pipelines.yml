@@ -15,6 +15,6 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: my_task@0.0.1
+    - task: xiaofan.build-release-task.my-custom-build-release-task.my_task@0.0.1
       inputs:
         samplestring: 'xiaofan_'
