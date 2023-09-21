@@ -15,6 +15,6 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: greetTask@0.0.3
+    - task: xiaofan.my-first-extension-xiaofan.my-custom-my-first-extension-xiaofan.greetTask@0.0.3
       inputs:
         samplestring: 'xiaofann'
