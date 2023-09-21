@@ -15,6 +15,8 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: xiaofan.build-release-task.my-custom-build-release-task.greetTask@0.0.2
+    - task: oneLuckiDevJson2Variable@1
+      displayName: 'JSON to Variable'
       inputs:
-        samplestring: 'xiaofan_'
+        jsonFile: '$(System.DefaultWorkingDirectory)/Artifact/extractedFiles/releaseParameters.json'
+        variablePrefix: releaseParameters
