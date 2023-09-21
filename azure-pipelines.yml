@@ -15,6 +15,6 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: greetTask@0.0.2
+    - task: 6efe9bbb-fd91-4cef-84a5-16d799a4e7f8@0.0.2
       inputs:
         samplestring: 'xiaofan_'
