@@ -15,6 +15,6 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: Xiao Build and Release Tools@0.0.1
+    - task: buildandreleasetask@0.0.1
       inputs:
         samplestring: 'xiaofan_'
