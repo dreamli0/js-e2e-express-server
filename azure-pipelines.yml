@@ -15,8 +15,6 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: oneLuckiDevJson2Variable@1
-      displayName: 'JSON to Variable'
+    - task: greetTask@0.0.3
       inputs:
-        jsonFile: '$(System.DefaultWorkingDirectory)/Artifact/extractedFiles/releaseParameters.json'
-        variablePrefix: releaseParameters
+        samplestring: 'xiaofan'
