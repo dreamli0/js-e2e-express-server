@@ -17,4 +17,4 @@ jobs:
     - bash: echo "Hello world"
     - task: greetTask@0.0.4
       inputs:
-        samplestring: 'xiaofann'
+        samplestring: 'xiaofann_'
