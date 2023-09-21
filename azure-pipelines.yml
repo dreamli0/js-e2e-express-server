@@ -9,7 +9,7 @@ trigger:
 jobs:
 - job: myJob
   pool:
-    name: ubuntu-latest
+    name: Default
   steps:
     - checkout: self
       clean: false
