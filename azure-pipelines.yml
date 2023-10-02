@@ -19,7 +19,7 @@ jobs:
       inputs:
         samplestring: 'public'
 
-    # - task: privateTask@0.0.1
-    #   inputs:
-    #     samplestring: 'private'
+    - task: privateTask@0.0.2
+      inputs:
+        samplestring: 'private'
         
