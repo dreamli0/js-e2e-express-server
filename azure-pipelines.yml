@@ -19,6 +19,6 @@ jobs:
       inputs:
         samplestring: 'public'
         
-    - task: greetTask@0.0.1
-      inputs:
-        samplestring: 'private'
+    # - task: greetTask@0.0.1
+    #   inputs:
+    #     samplestring: 'private'
