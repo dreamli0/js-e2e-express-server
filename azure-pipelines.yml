@@ -15,6 +15,10 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: greetTask@0.0.4
+    - task: greetTask@0.0.7
       inputs:
-        samplestring: 'xiaofann_'
+        samplestring: 'public'
+        
+    - task: greetTask@0.0.1
+      inputs:
+        samplestring: 'private'
