@@ -15,7 +15,7 @@ jobs:
       clean: false
     
     - bash: echo "Hello world"
-    - task: greetTask@1
+    - task: greetTask@1.0.0
       inputs:
         samplestring: 'public'
 
