@@ -13,13 +13,19 @@ jobs:
   steps:
     - checkout: self
       clean: false
-    
-    - bash: echo "Hello world"
-    - task: greetTask@1
-      inputs:
-        samplestring: 'public_check_1.0.5'
 
-    - task: privateTask@0.0.1
+    - task: privateTask@0
       inputs:
         samplestring: 'private'
+      name: privateTask
+
+    - task: greetTask@1
+      inputs:
+        samplestring: 'public'
+
+    - bash: |
+        echo $(privateTask.outputVar)
+    
+
+    
         
