@@ -21,7 +21,7 @@ jobs:
         
     - bash: |
         echo $(privateTask.outputVar)
-        condition: eq(privateTask.outputVar, 'time')
+      condition: eq(privateTask.outputVar, 'time')
         
     - bash: |
         echo `time`
