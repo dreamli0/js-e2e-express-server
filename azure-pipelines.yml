@@ -20,7 +20,8 @@ jobs:
         samplestring: 'public'
         
     - bash: |
-        echo $(privateTask.outputVar)
+        # echo $(privateTask.outputVar)
+        echo 'test'
         condition: eq(variables.outputVar2, 'time')
         
     - bash: |
