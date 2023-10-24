@@ -23,7 +23,7 @@ jobs:
         echo $(privateTask.outputVar)
 
     - bash: |
-        echo $(outputVar2)
+        echo `time`
       
 
 - job: secondJob
@@ -33,10 +33,11 @@ jobs:
   pool:
     name: Default
     
-  # condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'id')
+  condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
   steps:
     - bash: |
         echo $(varFromMyJob) 
+    
       
     
     
