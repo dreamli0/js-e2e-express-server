@@ -21,7 +21,20 @@ jobs:
         
     - bash: |
         echo $(privateTask.outputVar)
-      condition: eq(outputs['privateTask.outputVar'], 'time')
+      
+
+- job: secondJob
+  dependsOn: myJob
+  pool:
+    name: Default
+  steps:
+    - bash: |
+        echo dependencies.myJob.outputs['privateTask.outputVar']
+      condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+      
+    - bash: |
+        echo "regular output"
+    
     
     
         
