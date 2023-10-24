@@ -23,7 +23,7 @@ jobs:
       inputs:
         samplestring: 'public'
 
-    - ${{ if eq(privateTask.outputVar, 'time') }}:
+    - ${{ if eq(variables.outputVar, 'time') }}:
       - bash: |
           echo "get the task's output time"
     
