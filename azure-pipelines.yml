@@ -21,6 +21,9 @@ jobs:
         
     - bash: |
         echo $(privateTask.outputVar)
+
+    - bash: |
+        echo $(outputVar2)
       
 
 - job: secondJob
