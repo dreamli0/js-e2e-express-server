@@ -25,11 +25,13 @@ jobs:
 
 - job: secondJob
   dependsOn: myJob
+  variables:
+    varFromMyJob: $[ dependencies.myJob.outputs['privateTask.outputVar'] ]
   pool:
     name: Default
   steps:
     - bash: |
-        echo $(dependencies.myJob.outputs['privateTask.outputVar'])      
+        echo $(varFromMyJob)      
       
     - bash: |
         echo "regular output"
