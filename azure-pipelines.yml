@@ -30,7 +30,7 @@ jobs:
   steps:
     - bash: |
         echo dependencies.myJob.outputs['privateTask.outputVar']
-      condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+      
       
     - bash: |
         echo "regular output"
