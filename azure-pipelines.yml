@@ -29,8 +29,7 @@ jobs:
     name: Default
   steps:
     - bash: |
-        echo dependencies.myJob.outputs['privateTask.outputVar']
-      
+        echo $(dependencies.myJob.outputs['privateTask.outputVar'])      
       
     - bash: |
         echo "regular output"
