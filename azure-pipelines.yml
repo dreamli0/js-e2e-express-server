@@ -33,7 +33,7 @@ jobs:
   pool:
     name: Default
     
-  condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+  condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'id')
   steps:
     - bash: |
         echo $(varFromMyJob) 
