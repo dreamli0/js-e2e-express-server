@@ -22,13 +22,10 @@ jobs:
     - task: greetTask@1
       inputs:
         samplestring: 'public'
-
-    - ${{ if eq($(privateTask.outputVar), 'time') }}:
-      - bash: |
-          echo "get the task's output time"
+        
+    - bash: |
+        echo $(privateTask.outputVar)
+      condition: eq(privateTask.outputVar, 'Yes')
     
-    - ${{ else }}:
-      - bash: |
-          echo $(privateTask.outputVar)
     
         
