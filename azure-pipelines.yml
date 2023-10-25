@@ -21,7 +21,7 @@ jobs:
 
     - task: greetTask@1
       inputs:
-        samplestring: $(ui_variable)
+        samplestring: 'publick'
         
     - bash: |
         echo $(privateTask.outputVar)
