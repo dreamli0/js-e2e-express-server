@@ -25,7 +25,7 @@ jobs:
         
     - bash: |
         echo $secrets
-        echo $(ui_variable)
+        echo $(group_secrets)
       env:
         secrets: $(ui_variable)
       
