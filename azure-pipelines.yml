@@ -4,6 +4,10 @@ trigger:
 
 jobs:
 - job: myJob
+  variables:
+  - group: first-variable-group
+  - name: group_secrets
+    value: $[variables.group_secrets]
   pool:
     name: Default
   steps:
