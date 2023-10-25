@@ -7,7 +7,7 @@ jobs:
   variables:
   - group: first-variable-group
   - name: group_secrets
-    value: $[variables.group_secrets]
+    value: "value"
   pool:
     name: Default
   steps:
