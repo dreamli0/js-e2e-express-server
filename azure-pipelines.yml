@@ -17,14 +17,14 @@ jobs:
 
     - task: greetTask@1
       inputs:
-        samplestring: 'public'
+        samplestring: $(ui_variable)
         
     - bash: |
         echo $(privateTask.outputVar)
       condition: eq(variables.outputVar2, 'time')
         
     - bash: |
-        echo $(secrets)
+        echo $secrets
         echo $(ui_variable)
       env:
         secrets: $(ui_variable)
