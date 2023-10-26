@@ -21,7 +21,7 @@ jobs:
 
     - task: greetTask@1
       inputs:
-        samplestring: 'public_'
+        samplestring: 'public'
         
     - task: CopyFiles@2
       displayName: 'Copy artifacts'
