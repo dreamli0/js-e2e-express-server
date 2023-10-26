@@ -34,17 +34,17 @@ jobs:
         secrets: $(ui_variable)
       
 
-# - job: secondJob
-#   dependsOn: myJob
-#   variables:
-#     varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
-#   pool:
-#     name: Default
+- job: secondJob
+  dependsOn: myJob
+  variables:
+    varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
+  pool:
+    name: Default
     
-#   condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
-#   steps:
-#     - bash: |
-#         echo $(varFromMyJob) 
+  condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+  steps:
+    - bash: |
+        echo $(varFromMyJob) 
     
       
     
