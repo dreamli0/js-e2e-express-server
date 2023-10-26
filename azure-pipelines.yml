@@ -38,10 +38,10 @@ jobs:
   dependsOn: myJob
   variables:
     varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
-  pool:
-    name: Default
+  # pool:
+  #   name: Default
     
-  condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+  # condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
   steps:
     - bash: |
         echo $(varFromMyJob) 
