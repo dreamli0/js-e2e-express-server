@@ -29,6 +29,7 @@ jobs:
         
     - bash: |
         echo $(Agent.BuildDirectory)
+        echo $(Agent.HomeDirectory)
       #   echo $secrets
       #   echo $(group_secrets)
       # env:
