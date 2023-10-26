@@ -23,31 +23,30 @@ jobs:
       inputs:
         samplestring: 'public'
         
-    - bash: |
-        echo $(privateTask.outputVar)
-      condition: eq(variables.outputVar2, 'time')
-        
-    - bash: |
-        echo $(Agent.BuildDirectory)
-        echo $(Build.ArtifactStagingDirectory)
-        echo $(Agent.WorkFolder)
-      #   echo $secrets
-      #   echo $(group_secrets)
-      # env:
-      #   secrets: $(ui_variable)
+    - task: CopyFiles@2
+      displayName: 'Copy artifacts'
+      inputs:
+        contents: 'artifact/**'
+        targetFolder: '$(Agent.BuildDirectory)/s'
+
+    - publish: '$(Agent.BuildDirectory)/s/artifact'
+      displayName: 'Publish artifact'
+      artifact: drop
       
 
-# - job: secondJob
-#   dependsOn: myJob
-#   variables:
-#     varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
-#   pool:
-#     name: Default
+- job: secondJob
+  dependsOn: myJob
+  pool:
+    name: Default
     
-#   condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
-#   steps:
-#     - bash: |
-#         echo $(varFromMyJob) 
+  steps:
+    - download: current
+      artifact: drop
+
+    - bash: |
+        echo $(Pipeline.Workspace)
+        echo $(Pipeline.Workspace)\drop\test.txt
+    
     
       
     
