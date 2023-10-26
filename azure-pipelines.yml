@@ -45,7 +45,7 @@ jobs:
 
     - bash: |
         echo $(Pipeline.Workspace)
-        echo $(Pipeline.Workspace)/drop/test.txt
+        echo '$(Pipeline.Workspace)/drop/test.txt'
     
     
       
