@@ -12,7 +12,7 @@ jobs:
     name: Default
   steps:
     - checkout: self
-      clean: false
+      clean: true
 
     - task: privateTask@0
       inputs:
@@ -45,7 +45,7 @@ jobs:
 
     - bash: |
         echo $(Pipeline.Workspace)
-        echo $(Pipeline.Workspace)\drop\test.txt
+        echo $(Pipeline.Workspace)/drop/test.txt
     
     
       
