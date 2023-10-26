@@ -30,6 +30,7 @@ jobs:
     - bash: |
         echo $(Agent.BuildDirectory)
         echo $(Agent.HomeDirectory)
+        echo $(Agent.WorkFolder)
       #   echo $secrets
       #   echo $(group_secrets)
       # env:
