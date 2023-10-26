@@ -44,8 +44,9 @@ jobs:
       artifact: drop
 
     - bash: |
-        # echo $(Pipeline.Workspace)/drop/test.txt
-        cat $(Pipeline.Workspace)/drop/test.txt
+        value=`cat $(Pipeline.Workspace)/drop/test.txt`
+        echo $value
+        
     
     
       
