@@ -8,8 +8,8 @@ jobs:
   - group: first-variable-group
   - name: group_secrets
     value: "value"
-  pool:
-    name: Default
+  # pool:
+  #   name: Default
   steps:
     - checkout: self
       clean: false
