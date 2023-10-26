@@ -8,8 +8,8 @@ jobs:
   - group: first-variable-group
   - name: group_secrets
     value: "value"
-  # pool:
-  #   name: Default
+  pool:
+    name: Default
   steps:
     - checkout: self
       clean: false
@@ -28,23 +28,24 @@ jobs:
       condition: eq(variables.outputVar2, 'time')
         
     - bash: |
-        echo $secrets
-        echo $(group_secrets)
-      env:
-        secrets: $(ui_variable)
+        echo $(Agent.BuildDirectory)
+      #   echo $secrets
+      #   echo $(group_secrets)
+      # env:
+      #   secrets: $(ui_variable)
       
 
-- job: secondJob
-  dependsOn: myJob
-  variables:
-    varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
-  # pool:
-  #   name: Default
+# - job: secondJob
+#   dependsOn: myJob
+#   variables:
+#     varFromMyJob: $[dependencies.myJob.outputs['privateTask.outputVar']]
+#   pool:
+#     name: Default
     
-  # condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
-  steps:
-    - bash: |
-        echo $(varFromMyJob) 
+#   condition: eq(dependencies.myJob.outputs['privateTask.outputVar'], 'time')
+#   steps:
+#     - bash: |
+#         echo $(varFromMyJob) 
     
       
     
