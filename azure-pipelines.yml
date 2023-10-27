@@ -26,9 +26,9 @@ jobs:
         path: $(Agent.BuildDirectory)/s/mycache
         cacheHitVar: CACHE_RESTORED
     
-    - task: greetTask@1
-      inputs:
-        samplestring: 'public'
+    # - task: greetTask@1
+    #   inputs:
+    #     samplestring: 'public'
 
     - bash: |
         value=`cat $(Agent.BuildDirectory)/s/mycache/mycache_test.txt`
