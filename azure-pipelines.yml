@@ -31,8 +31,8 @@ jobs:
         samplestring: 'public'
 
     - bash: |
-        echo $(Agent.BuildDirectory)
-        echo $(variables.CACHE_RESTORED)
+        value=`cat $(Agent.BuildDirectory)/s/mycache/mycache_test.txt`
+        echo $value
         
     
       
