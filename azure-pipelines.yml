@@ -8,8 +8,8 @@ jobs:
   - group: first-variable-group
   - name: group_secrets
     value: "value"
-  # pool:
-  #   name: Default
+  pool:
+    name: Default
   steps:
     - checkout: self
       clean: true
@@ -19,33 +19,35 @@ jobs:
         samplestring: 'private'
       name: privateTask
 
+    - task: Cache@2
+      inputs:
+        key: mykey
+        restoreKeys: mykey
+        path: $(Agent.BuildDirectory)/mycache
+        cacheHitVar: CACHE_RESTORED
+    
     - task: greetTask@1
       inputs:
         samplestring: 'public'
-        
-    - task: CopyFiles@2
-      displayName: 'Copy artifacts'
-      inputs:
-        contents: 'artifact/**'
-        targetFolder: '$(Agent.BuildDirectory)/s'
-
-    - publish: '$(Agent.BuildDirectory)/s/artifact'
-      displayName: 'Publish artifact'
-      artifact: drop
-      
-
-- job: secondJob
-  dependsOn: myJob
-  # pool:
-  #   name: Default
-    
-  steps:
-    - download: current
-      artifact: drop
 
     - bash: |
-        value=`cat $(Pipeline.Workspace)/drop/test.txt`
-        echo $value
+        echo $(variables.CACHE_RESTORED)
+        
+    
+      
+
+# - job: secondJob
+#   dependsOn: myJob
+#   pool:
+#     name: Default
+    
+#   steps:
+#     - download: current
+#       artifact: drop
+
+#     - bash: |
+#         value=`cat $(Pipeline.Workspace)/drop/test.txt`
+#         echo $value
         
     
     
