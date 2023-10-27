@@ -21,8 +21,8 @@ jobs:
 
     - task: Cache@2
       inputs:
-        key: mykey_5
-        restoreKeys: mykey_5
+        key: mykey_3
+        restoreKeys: mykey_3
         path: $(Agent.BuildDirectory)/s/mycache
         cacheHitVar: CACHE_RESTORED
     
