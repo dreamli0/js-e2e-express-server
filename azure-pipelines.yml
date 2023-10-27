@@ -8,8 +8,8 @@ jobs:
   - group: first-variable-group
   - name: group_secrets
     value: "value"
-  pool:
-    name: Default
+  # pool:
+  #   name: Default
   steps:
     - checkout: self
       clean: true
@@ -21,8 +21,8 @@ jobs:
 
     - task: Cache@2
       inputs:
-        key: mykey_4
-        restoreKeys: mykey_4
+        key: mykey_5
+        restoreKeys: mykey_5
         path: $(Agent.BuildDirectory)/s/mycache
         cacheHitVar: CACHE_RESTORED
     
