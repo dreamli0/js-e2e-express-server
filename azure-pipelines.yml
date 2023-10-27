@@ -23,7 +23,7 @@ jobs:
       inputs:
         key: mykey
         restoreKeys: mykey
-        path: $(Agent.BuildDirectory)/mycache
+        path: $(Agent.BuildDirectory)/s/mycache
         cacheHitVar: CACHE_RESTORED
     
     - task: greetTask@1
