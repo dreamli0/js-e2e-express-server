@@ -3,11 +3,11 @@ trigger:
 - main
 
 resources:
-  resources:
-    repositories:
-      - repository: templates
-        type: github
-        name: musset0/test_actions_02
+  repositories:
+    - repository: templates
+      type: github
+      name: musset0/test_actions_02
+  
 
 jobs:
 - template: common.yml@templates 
