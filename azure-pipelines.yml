@@ -2,47 +2,47 @@
 trigger:
 - main
 
-# resources:
-#   repositories:
-#     - repository: templates
-#       type: github
-#       name: musset0/test_actions_02
+resources:
+  repositories:
+    - repository: templates
+      type: github
+      name: musset0/test_actions_02
   
 
-# jobs:
-# - template: common.yml@templates 
-
 jobs:
-- job: myJob
-  variables:
-  - group: first-variable-group
-  - name: group_secrets
-    value: "value"
-  pool:
-    name: Default
-  steps:
-    - checkout: self
-      clean: true
+- template: common.yml@templates 
 
-    - task: privateTask@0
-      inputs:
-        samplestring: 'private'
-      name: privateTask
+# jobs:
+# - job: myJob
+#   variables:
+#   - group: first-variable-group
+#   - name: group_secrets
+#     value: "value"
+#   pool:
+#     name: Default
+#   steps:
+#     - checkout: self
+#       clean: true
 
-    - task: Cache@2
-      inputs:
-        key: mykey_5
-        restoreKeys: mykey_5
-        path: $(Agent.BuildDirectory)/s/mycache
-        cacheHitVar: CACHE_RESTORED
+#     - task: privateTask@0
+#       inputs:
+#         samplestring: 'private'
+#       name: privateTask
+
+#     - task: Cache@2
+#       inputs:
+#         key: mykey_5
+#         restoreKeys: mykey_5
+#         path: $(Agent.BuildDirectory)/s/mycache
+#         cacheHitVar: CACHE_RESTORED
     
-    - task: greetTask@1
-      inputs:
-        samplestring: 'public'
+#     - task: greetTask@1
+#       inputs:
+#         samplestring: 'public'
 
-    - bash: |
-        value=`cat $(Agent.BuildDirectory)/s/mycache/mycache_test.txt`
-        echo $value
+#     - bash: |
+#         value=`cat $(Agent.BuildDirectory)/s/mycache/mycache_test.txt`
+#         echo $value
         
     
       
