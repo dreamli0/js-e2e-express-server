@@ -12,7 +12,7 @@ resources:
 jobs: 
 - template: common.yml@templates
   parameters:
-    vmImage: 'Default'
+    vmImage: 'Default' 
     
 
 # jobs:
