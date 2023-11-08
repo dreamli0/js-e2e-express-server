@@ -16,7 +16,7 @@ jobs:
     samplestring: 'public'
     - group: first-variable-group
     - name: group_secrets
-      value: "value"
+      value: "value" 
     
 
 # jobs:
