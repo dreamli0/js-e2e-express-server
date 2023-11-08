@@ -10,13 +10,12 @@ resources:
       endpoint: github_musset_repo
 
 jobs: 
+
 - template: common.yml@templates
   parameters:
     vmImage: 'Default' 
     samplestring: 'public'
-    - group: first-variable-group
-    - name: group_secrets
-      value: "value" 
+    
     
 
 # jobs:
