@@ -13,6 +13,7 @@ jobs:
 - template: common.yml@templates
   parameters:
     vmImage: 'Default'
+    
 
 # jobs:
 # - job: myJob
