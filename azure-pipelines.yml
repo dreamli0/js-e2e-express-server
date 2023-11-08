@@ -9,8 +9,7 @@ resources:
       name: musset0/test_actions_02
       endpoint: github_musset_repo
 
-jobs: 
-
+jobs:
 - template: common.yml@templates
   parameters:
     vmImage: 'Default' 
