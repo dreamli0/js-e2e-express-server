@@ -15,15 +15,15 @@ jobs:
     vmImage: 'Default' 
     samplestring: 'publicc'
     
-- job: secondJob
-  pool:
-    name: Default
+# - job: secondJob
+#   pool:
+#     name: Default
     
-  steps:
-    - bash: |
-        echo "This is the second job..."
-        # value=`cat $(Pipeline.Workspace)/drop/test.txt`
-        # echo $value
+#   steps:
+#     - bash: |
+#         echo "This is the second job..."
+#         # value=`cat $(Pipeline.Workspace)/drop/test.txt`
+#         # echo $value
 
 # jobs:
 # - job: myJob
