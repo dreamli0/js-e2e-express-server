@@ -13,7 +13,7 @@ jobs:
 - template: common.yml@templates
   parameters:
     vmImage: 'Default' 
-    samplestring: 'public'
+    samplestring: 'publicc'
     
 - job: secondJob
   pool:
