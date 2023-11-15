@@ -12,8 +12,8 @@ resources:
 jobs:
 - template: common.yml@templates
   parameters:
-    vmImage: 'Default' 
-    samplestring: 'publicc'
+    vmImage: 'ubuntu-latest' 
+    samplestring: 'public'
     
 # - job: secondJob
 #   pool:
