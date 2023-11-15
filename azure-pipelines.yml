@@ -2,34 +2,34 @@
 trigger:
 - main
 
-resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: musset0/test_actions_02
-      endpoint: github_musset_repo
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: github
+#       name: musset0/test_actions_02
+#       endpoint: github_musset_repo
 
-jobs:
-- template: common.yml@templates
-  parameters:
-    vmImage: 'ubuntu-latest' 
-    samplestring: 'public'
-    
 # jobs:
-# - job: myJob
+# - template: common.yml@templates
+#   parameters:
+#     vmImage: 'ubuntu-latest' 
+#     samplestring: 'public'
+    
+jobs:
+- job: myJob
   
-#   pool:
-#     vmImage: ubuntu-latest
-#   steps:
-#     - checkout: self
-#       clean: true
+  pool:
+    name: Default
+  steps:
+    - checkout: self
+      clean: true
 
-#     - task: privateTask@0
-#       inputs:
-#         samplestring: 'private'
-#       name: privateTask
+    - task: privateTask@0
+      inputs:
+        samplestring: 'private'
+      name: privateTask
 
     
-#     - task: greetTask@1
-#       inputs:
-#         samplestring: 'public'
+    - task: greetTask@1
+      inputs:
+        samplestring: 'public'
