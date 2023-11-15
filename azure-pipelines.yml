@@ -2,81 +2,34 @@
 trigger:
 - main
 
-resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: musset0/test_actions_02
-      endpoint: github_musset_repo
-
-jobs:
-- template: common.yml@templates
-  parameters:
-    vmImage: 'ubuntu-latest' 
-    samplestring: 'public'
-    
-# - job: secondJob
-#   pool:
-#     name: Default
-    
-#   steps:
-#     - bash: |
-#         echo "This is the second job..."
-#         # value=`cat $(Pipeline.Workspace)/drop/test.txt`
-#         # echo $value
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: github
+#       name: musset0/test_actions_02
+#       endpoint: github_musset_repo
 
 # jobs:
-# - job: myJob
-#   variables:
-#   - group: first-variable-group
-#   - name: group_secrets
-#     value: "value"
-#   pool:
-#     name: Default
-#   steps:
-#     - checkout: self
-#       clean: true
+# - template: common.yml@templates
+#   parameters:
+#     vmImage: 'ubuntu-latest' 
+#     samplestring: 'public'
+    
+jobs:
+- job: myJob
+  
+  pool:
+    vmImage: ubuntu-latest
+  steps:
+    - checkout: self
+      clean: true
 
-#     - task: privateTask@0
-#       inputs:
-#         samplestring: 'private'
-#       name: privateTask
+    - task: privateTask@0
+      inputs:
+        samplestring: 'private'
+      name: privateTask
 
-#     - task: Cache@2
-#       inputs:
-#         key: mykey_5
-#         restoreKeys: mykey_5
-#         path: $(Agent.BuildDirectory)/s/mycache
-#         cacheHitVar: CACHE_RESTORED
     
-#     - task: greetTask@1
-#       inputs:
-#         samplestring: 'public'
-
-#     - bash: |
-#         value=`cat $(Agent.BuildDirectory)/s/mycache/mycache_test.txt`
-#         echo $value
-        
-    
-      
-
-# - job: secondJob
-#   dependsOn: myJob
-#   pool:
-#     name: Default
-    
-#   steps:
-#     - download: current
-#       artifact: drop
-
-#     - bash: |
-#         value=`cat $(Pipeline.Workspace)/drop/test.txt`
-#         echo $value
-        
-    
-    
-      
-    
-    
-    
-        
+    - task: greetTask@1
+      inputs:
+        samplestring: 'public'
