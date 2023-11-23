@@ -31,8 +31,7 @@ jobs:
       inputs:
         samplestring: 'private'
       name: privateTask
-
-    
+      
     - task: greetTask@1
       inputs:
         samplestring: 'public'
