@@ -32,4 +32,4 @@ jobs:
     
     - task: greetTask@1
       inputs:
-        samplestring: 'publicc'
+        samplestring: 'public'
