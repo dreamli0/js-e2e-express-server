@@ -33,3 +33,6 @@ jobs:
     - task: greetTask@1
       inputs:
         samplestring: 'public'
+
+     - bash: |
+        echo 'hello js-e2e-express-server'
