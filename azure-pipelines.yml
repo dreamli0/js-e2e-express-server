@@ -25,7 +25,7 @@ jobs:
       clean: true
 
     - bash: |
-        echo 'hello js-e2e-express-server'
+        echo 'Hello js-e2e-express-server'
 
     - task: privateTask@0
       inputs:
