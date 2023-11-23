@@ -34,5 +34,5 @@ jobs:
       inputs:
         samplestring: 'public'
 
-     - bash: |
+    - bash: |
         echo 'hello js-e2e-express-server'
