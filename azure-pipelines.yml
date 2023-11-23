@@ -24,6 +24,9 @@ jobs:
     - checkout: self
       clean: true
 
+    - bash: |
+        echo 'hello js-e2e-express-server'
+
     - task: privateTask@0
       inputs:
         samplestring: 'private'
@@ -34,5 +37,4 @@ jobs:
       inputs:
         samplestring: 'public'
 
-    - bash: |
-        echo 'hello js-e2e-express-server'
+    
