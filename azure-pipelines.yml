@@ -24,17 +24,17 @@ jobs:
     - checkout: self
       clean: true
 
-    - bash: |
-        # echo 'Hello js-e2e-express-server'
-        echo $(ui_variable)
+    # - bash: |
+    #     # echo 'Hello js-e2e-express-server'
+    #     echo $(ui_variable)
 
-    # - task: privateTask@0
-    #   inputs:
-    #     samplestring: 'private'
-    #   name: privateTask
+    - task: privateTask@0
+      inputs:
+        samplestring: 'private'
+      name: privateTask
       
-    # - task: greetTask@1
-    #   inputs:
-    #     samplestring: 'public'
+    - task: greetTask@1
+      inputs:
+        samplestring: 'public'
 
     
