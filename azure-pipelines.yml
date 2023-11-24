@@ -18,8 +18,8 @@ trigger:
 jobs:
 - job: myJob
   
-  # pool:
-  #   name: Default
+  pool:
+    name: Default
   steps:
     - checkout: self
       clean: true
@@ -33,8 +33,8 @@ jobs:
     #     samplestring: 'private'
     #   name: privateTask
       
-    # - task: greetTask@1
-    #   inputs:
-    #     samplestring: 'public'
+    - task: greetTask@1
+      inputs:
+        samplestring: 'public'
 
     
